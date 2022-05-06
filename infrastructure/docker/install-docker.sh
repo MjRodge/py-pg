@@ -18,3 +18,9 @@ sudo dnf install -y docker-ce docker-ce-cli containerd.io
 # enable services in systemd
 sudo systemctl start docker && sudo systemctl enable docker
 sudo systemctl enable containerd
+
+# post docker install steps
+# manage docker as non-root user
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker 
