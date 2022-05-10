@@ -23,11 +23,11 @@ sudo systemctl enable containerd
 # manage docker as non-root user
 sudo groupadd docker
 sudo usermod -aG docker $USER
+newgrp docker
 
 ## fix this
 # install docker-compose
 #sudo mkdir -p ~/.docker/cli-plugins/
-#sudo curl -L "https://github.com/docker/compose/releases/download/2.5.0/docker-compose-linux-x86_64" -o ~/.docker/cli-plugins/docker-compose
-# sudo mv /usr/local/bin/docker-compose /usr/lib/docker/cli-plugins
+#curl -sSL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
 #sudo chmod +x ~/.docker/cli-plugins/docker-compose
 #docker compose version
